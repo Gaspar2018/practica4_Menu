@@ -5,13 +5,34 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
+
+import com.squareup.picasso.Picasso;
 
 public class Main2Activity extends AppCompatActivity {
+
+     ImageView img1, img2;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+
+        img1=findViewById(R.id.imageView );
+        img2=findViewById(R.id.imageView2 );
+
+        String url1 ="http://www.programadoresperuanos.com/test_app/picasso/imagen1.jpg";
+        String url2 ="http://www.programadoresperuanos.com/test_app/picasso/imagen2.jpg";
+
+        Picasso.get().load(url1)
+                     .error(R.drawable.error)
+                     .fit()
+                     .placeholder(R.drawable.error)
+                     .into(img1);
+
+        Picasso.get().load(url2).into(img2);
+
     }
 
 
@@ -31,11 +52,11 @@ public class Main2Activity extends AppCompatActivity {
                 startActivity(intento1);
                 return true;
             case R.id.opcion2:
-                Intent intento2= new Intent(this,MainActivity.class);
+                Intent intento2= new Intent(this,Main2Activity.class);
                 startActivity(intento2);
                 return true;
             case R.id.opcion3:
-                Intent intento3= new Intent(this,MainActivity.class);
+                Intent intento3= new Intent(this,Main3Activity.class);
                 startActivity(intento3);
                 return true;
             default:

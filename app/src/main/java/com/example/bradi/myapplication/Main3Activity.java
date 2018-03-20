@@ -31,11 +31,11 @@ public class Main3Activity extends AppCompatActivity {
                 startActivity(intento1);
                 return true;
             case R.id.opcion2:
-                Intent intento2= new Intent(this,MainActivity.class);
+                Intent intento2= new Intent(this,Main2Activity.class);
                 startActivity(intento2);
                 return true;
             case R.id.opcion3:
-                Intent intento3= new Intent(this,MainActivity.class);
+                Intent intento3= new Intent(this,Main3Activity.class);
                 startActivity(intento3);
                 return true;
             default:
